@@ -1,9 +1,10 @@
+import numpy as np
+
 def countHillValley(nums):
     count=0
     prevv=nums[0]
     prev=nums[1]
     for i in range(2, len(nums)):
-        print(prevv, prev, nums[i])
         if nums[i] != prev:
             if nums[i] > prev and prev > prevv:
                 prevv = prev
@@ -24,7 +25,6 @@ def countHillValley(nums):
                 prev = nums[i]
         else:
             count += 0
-        print(count)
     return count
 
 def countHillValley0ms(nums):
@@ -42,4 +42,6 @@ def countHillValley0ms(nums):
     return count
 
 #print(countHillValley([2,4,1,1,6,5]))
-print(countHillValley([21,21,21,2,2,2,2,21,21,45]))
+#print(countHillValley([21,21,21,2,2,2,2,21,21,45]))
+numpy_array = np.random.randint(1, 1000, 1000000000)
+print(countHillValley0ms(numpy_array))
